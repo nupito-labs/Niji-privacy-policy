@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FinApp Privacy Policy</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 5rem;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background: #fff;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e8e8e8; background: #121212; }
+    a { color: #7db8ff; }
+    table, th, td { border-color: #3a3a3a !important; }
+  }
+  h1 { font-size: 1.7rem; margin-bottom: 0.25rem; }
+  h2 { font-size: 1.25rem; margin-top: 2.2rem; }
+  .updated { color: #666; font-size: 0.9rem; margin-bottom: 2rem; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #ddd; padding: 0.5rem 0.7rem; text-align: left; vertical-align: top; }
+  th { background: rgba(127,127,127,0.08); }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid rgba(127,127,127,0.3); font-size: 0.85rem; color: #666; }
+</style>
+</head>
+<body>
+
+<h1>FinApp Privacy Policy</h1>
+<p class="updated">Last updated: 5 September 2026</p>
+
+<h2>The short version</h2>
+<p>FinApp reads payment notifications on your phone, turns them into a spending
+record, and keeps that record on your phone. It has no servers. It does not
+have an account system. Your transaction history is never uploaded, sold, or
+shared with anyone, including us.</p>
+<p>Everything below is detail on that.</p>
+
+<h2>What FinApp reads</h2>
+<p><strong>Payment notifications.</strong> With your permission, FinApp reads notifications
+posted by the payment and bank apps <strong>you select</strong> during setup or in
+Settings &rarr; Monitored apps. From those notifications it extracts:</p>
+<ul>
+  <li>the amount</li>
+  <li>who was paid, where the notification says so</li>
+  <li>the time</li>
+  <li>the notification's text, kept alongside the entry so you can check what it
+    was read from</li>
+</ul>
+<p>Notifications from every other app on your phone are discarded before their
+content is examined.</p>
+<p>FinApp does not read your SMS messages, email content, contacts, photos,
+call log, or location, and does not request permission for any of them.</p>
+<p><strong>What you type.</strong> Transactions you add or edit by hand, including any note or
+payee name you enter.</p>
+<p>That is the complete list. FinApp collects nothing else.</p>
+
+<h2>Where it goes</h2>
+<p>Nowhere. It is written to a database on your device that is encrypted with
+AES-256 (SQLCipher). The encryption key is generated on your device, stored in
+the Android Keystore, and never leaves it.</p>
+<p>FinApp has no server. There is no account to sign up for, nothing to sync, and
+no analytics, advertising, tracking, or crash-reporting service in the app.</p>
+
+<h2>The internet permission, stated plainly</h2>
+<p>FinApp's app listing shows the <code>INTERNET</code> permission, and we would rather
+explain that than have you find it and wonder.</p>
+<p>Most of it is <strong>Google Play Billing</strong> and the <strong>Play Integrity API</strong>, built
+into the app and requiring it. Those are used for the one-time purchase and to
+check the app was installed legitimately. They talk to Google, not to us — we
+have nothing for them to talk to.</p>
+<p>FinApp code itself also opens one kind of connection, optional:</p>
+<ul>
+  <li><strong>Currency conversion</strong>, only when Online Mode is turned on in Settings, to
+    fetch exchange rates from a public rate provider (api.frankfurter.app). No
+    transaction data is sent — only a currency code and a date.</li>
+</ul>
+<p>No part of your spending data is transmitted anywhere, by any means.</p>
+
+<h2>Backups, and the one case where data leaves your phone</h2>
+<p>If you choose to create a backup, FinApp writes an encrypted file and asks you
+where to put it, using Android's standard file picker.</p>
+<ul>
+  <li>The file is encrypted with AES-256-GCM using a <strong>recovery code shown once</strong>
+    and never stored. We cannot open your backup. Neither can anyone who obtains
+    the file without that code — and if you lose it, the backup cannot be
+    recovered by us or anyone else.</li>
+  <li>Where the file goes is entirely your choice. <strong>If you choose Google Drive or
+    any other cloud location, the file is then held by that provider under their
+    terms and privacy policy, not ours.</strong> FinApp is not told where you saved it.</li>
+</ul>
+<p>This only ever happens because you asked for it.</p>
+
+<h2>Permissions, and why each exists</h2>
+<table>
+  <tr><th>Permission</th><th>Why</th></tr>
+  <tr><td>Notification access</td><td>The core feature. Reads payment notifications from apps you select.</td></tr>
+  <tr><td>Show notifications</td><td>To alert you before a bill or EMI is due. Reminders are generated on your device.</td></tr>
+  <tr><td>Exact alarms <em>(optional)</em></td><td>Makes those reminders arrive on time rather than up to an hour late.</td></tr>
+  <tr><td>Run at startup</td><td>Re-arms your reminders after the phone restarts.</td></tr>
+  <tr><td>Vibrate</td><td>Reminder alerts.</td></tr>
+  <tr><td>Internet, network state</td><td>Google Play Billing and Play Integrity, plus currency conversion if Online Mode is on — see above.</td></tr>
+</table>
+<p>FinApp does <strong>not</strong> request SMS, contacts, accounts, storage, location,
+camera, microphone, phone state, or call log access.</p>
+
+<h2>Who your data is shared with</h2>
+<p>No one. There are no third-party analytics, advertising, or attribution SDKs in
+FinApp. We do not sell, rent, or share your data, because we never receive it.</p>
+<p>The app includes three third-party components, none of which receives your
+transaction data:</p>
+<ul>
+  <li><strong>SQLCipher</strong> — an on-device encryption library. Entirely local.</li>
+  <li><strong>Google Play Billing</strong> — processes the one-time purchase. Google receives
+    purchase information under <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</li>
+  <li><strong>Google Play Integrity</strong> — verifies the install is legitimate. Also Google's.</li>
+</ul>
+
+<h2>Your control over your data</h2>
+<ul>
+  <li><strong>See everything</strong>: your full history is in the app; Settings &rarr; Detection
+    diagnostics also shows what FinApp skipped and why.</li>
+  <li><strong>Change or delete any entry</strong>: tap a transaction to edit or delete it.</li>
+  <li><strong>Choose what is read</strong>: Settings &rarr; Monitored apps.</li>
+  <li><strong>Stop it entirely</strong>: revoke notification access in Android Settings.</li>
+  <li><strong>Delete everything</strong>: uninstall FinApp, or use Android Settings &rarr; Apps &rarr;
+    FinApp &rarr; Storage &rarr; Clear data. Because the data is only on your device,
+    removing the app removes the data. There is no copy for us to delete, and no
+    account for you to close.</li>
+</ul>
+
+<h2>Children</h2>
+<p>FinApp is not directed at children and does not knowingly collect data from
+anyone. It is a personal finance tool intended for adults.</p>
+
+<h2>Indian users (DPDP Act)</h2>
+<p>FinApp processes personal data entirely on your own device and transmits none
+of it. You retain access, correction, and erasure rights over everything in the
+app through the controls listed above.</p>
+
+<h2>Changes to this policy</h2>
+<p>If this policy changes, the "last updated" date above changes with it. Material
+changes will be noted in the app's release notes.</p>
+
+<h2>Contact</h2>
+<p><a href="mailto:support@nupitolabs.co.in">support@nupitolabs.co.in</a></p>
+
+<footer>
+  <p>Published by nupito labs &middot; <a href="https://nupitolabs.co.in/">nupitolabs.co.in</a></p>
+  <p>This is not legal advice. It is an accurate technical description written by
+  the developer.</p>
+</footer>
+
+</body>
+</html>
