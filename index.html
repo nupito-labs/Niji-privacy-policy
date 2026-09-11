@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FinApp Privacy Policy</title>
+<title>Niji Privacy Policy</title>
 <style>
   :root { color-scheme: light dark; }
   body {
@@ -31,18 +31,18 @@
 </head>
 <body>
 
-<h1>FinApp Privacy Policy</h1>
-<p class="updated">Last updated: 6 September 2026</p>
+<h1>Niji Privacy Policy</h1>
+<p class="updated">Last updated: 11 September 2026</p>
 
 <h2>The short version</h2>
-<p>FinApp reads payment notifications on your phone, turns them into a spending
+<p>Niji reads payment notifications on your phone, turns them into a spending
 record, and keeps that record on your phone. It has no servers. It does not
 have an account system. Your transaction history is never uploaded, sold, or
 shared with anyone, including us.</p>
 <p>Everything below is detail on that.</p>
 
-<h2>What FinApp reads</h2>
-<p><strong>Payment notifications.</strong> With your permission, FinApp reads notifications
+<h2>What Niji reads</h2>
+<p><strong>Payment notifications.</strong> With your permission, Niji reads notifications
 posted by the payment and bank apps <strong>you select</strong> during setup or in
 Settings &rarr; Monitored apps. From those notifications it extracts:</p>
 <ul>
@@ -54,33 +54,33 @@ Settings &rarr; Monitored apps. From those notifications it extracts:</p>
 </ul>
 <p>Notifications from every other app on your phone are discarded before their
 content is examined.</p>
-<p>FinApp does not read your SMS messages, email content, contacts, photos,
+<p>Niji does not read your SMS messages, email content, contacts, photos,
 call log, or location, and does not request permission for any of them.</p>
 <p><strong>What you type.</strong> Transactions you add or edit by hand, including any note or
 payee name you enter.</p>
-<p><strong>Text you share into FinApp.</strong> FinApp can be picked from another app's Share
+<p><strong>Text you share into Niji.</strong> Niji can be picked from another app's Share
 menu for plain text — for example, a bank SMS you choose to share manually.
 That text is parsed on your device to prefill the same add-transaction screen
 as manual entry, which you review and confirm before anything is saved. It is
 never read automatically, never sent anywhere, and never stored alongside the
 saved transaction.</p>
-<p>That is the complete list. FinApp collects nothing else.</p>
+<p>That is the complete list. Niji collects nothing else.</p>
 
 <h2>Where it goes</h2>
 <p>Nowhere. It is written to a database on your device that is encrypted with
 AES-256 (SQLCipher). The encryption key is generated on your device, stored in
 the Android Keystore, and never leaves it.</p>
-<p>FinApp has no server. There is no account to sign up for, nothing to sync, and
+<p>Niji has no server. There is no account to sign up for, nothing to sync, and
 no analytics, advertising, tracking, or crash-reporting service in the app.</p>
 
 <h2>The internet permission, stated plainly</h2>
-<p>FinApp's app listing shows the <code>INTERNET</code> permission, and we would rather
+<p>Niji's app listing shows the <code>INTERNET</code> permission, and we would rather
 explain that than have you find it and wonder.</p>
 <p>Most of it is <strong>Google Play Billing</strong> and the <strong>Play Integrity API</strong>, built
 into the app and requiring it. Those are used for the one-time purchase and to
 check the app was installed legitimately. They talk to Google, not to us — we
 have nothing for them to talk to.</p>
-<p>FinApp code itself also opens one kind of connection, optional:</p>
+<p>Niji code itself also opens one kind of connection, optional:</p>
 <ul>
   <li><strong>Currency conversion</strong>, only when Online Mode is turned on in Settings, to
     fetch exchange rates from a public rate provider (api.frankfurter.app). No
@@ -89,7 +89,7 @@ have nothing for them to talk to.</p>
 <p>No part of your spending data is transmitted anywhere, by any means.</p>
 
 <h2>Backups, and the one case where data leaves your phone</h2>
-<p>If you choose to create a backup, FinApp writes an encrypted file and asks you
+<p>If you choose to create a backup, Niji writes an encrypted file and asks you
 where to put it, using Android's standard file picker.</p>
 <ul>
   <li>The file is encrypted with AES-256-GCM using a <strong>recovery code shown once</strong>
@@ -98,7 +98,7 @@ where to put it, using Android's standard file picker.</p>
     recovered by us or anyone else.</li>
   <li>Where the file goes is entirely your choice. <strong>If you choose Google Drive or
     any other cloud location, the file is then held by that provider under their
-    terms and privacy policy, not ours.</strong> FinApp is not told where you saved it.</li>
+    terms and privacy policy, not ours.</strong> Niji is not told where you saved it.</li>
 </ul>
 <p>This only ever happens because you asked for it.</p>
 
@@ -112,12 +112,12 @@ where to put it, using Android's standard file picker.</p>
   <tr><td>Vibrate</td><td>Reminder alerts.</td></tr>
   <tr><td>Internet, network state</td><td>Google Play Billing and Play Integrity, plus currency conversion if Online Mode is on — see above.</td></tr>
 </table>
-<p>FinApp does <strong>not</strong> request SMS, contacts, accounts, storage, location,
+<p>Niji does <strong>not</strong> request SMS, contacts, accounts, storage, location,
 camera, microphone, phone state, or call log access.</p>
 
 <h2>Who your data is shared with</h2>
 <p>No one. There are no third-party analytics, advertising, or attribution SDKs in
-FinApp. We do not sell, rent, or share your data, because we never receive it.</p>
+Niji. We do not sell, rent, or share your data, because we never receive it.</p>
 <p>The app includes three third-party components, none of which receives your
 transaction data:</p>
 <ul>
@@ -130,22 +130,22 @@ transaction data:</p>
 <h2>Your control over your data</h2>
 <ul>
   <li><strong>See everything</strong>: your full history is in the app; Settings &rarr; Detection
-    diagnostics also shows what FinApp skipped and why.</li>
+    diagnostics also shows what Niji skipped and why.</li>
   <li><strong>Change or delete any entry</strong>: tap a transaction to edit or delete it.</li>
   <li><strong>Choose what is read</strong>: Settings &rarr; Monitored apps.</li>
   <li><strong>Stop it entirely</strong>: revoke notification access in Android Settings.</li>
-  <li><strong>Delete everything</strong>: uninstall FinApp, or use Android Settings &rarr; Apps &rarr;
-    FinApp &rarr; Storage &rarr; Clear data. Because the data is only on your device,
+  <li><strong>Delete everything</strong>: uninstall Niji, or use Android Settings &rarr; Apps &rarr;
+    Niji &rarr; Storage &rarr; Clear data. Because the data is only on your device,
     removing the app removes the data. There is no copy for us to delete, and no
     account for you to close.</li>
 </ul>
 
 <h2>Children</h2>
-<p>FinApp is not directed at children and does not knowingly collect data from
+<p>Niji is not directed at children and does not knowingly collect data from
 anyone. It is a personal finance tool intended for adults.</p>
 
 <h2>Indian users (DPDP Act)</h2>
-<p>FinApp processes personal data entirely on your own device and transmits none
+<p>Niji processes personal data entirely on your own device and transmits none
 of it. You retain access, correction, and erasure rights over everything in the
 app through the controls listed above.</p>
 
