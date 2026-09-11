@@ -77,9 +77,10 @@ no analytics, advertising, tracking, or crash-reporting service in the app.</p>
 <p>Niji's app listing shows the <code>INTERNET</code> permission, and we would rather
 explain that than have you find it and wonder.</p>
 <p>Most of it is <strong>Google Play Billing</strong> and the <strong>Play Integrity API</strong>, built
-into the app and requiring it. Those are used for the one-time purchase and to
-check the app was installed legitimately. They talk to Google, not to us — we
-have nothing for them to talk to.</p>
+into the app and requiring it. Those are used for the subscription (30 days
+free, then &#8377;365/year, cancel anytime) and to check the app was installed
+legitimately. They talk to Google, not to us — we have nothing for them to
+talk to.</p>
 <p>Niji code itself also opens one kind of connection, optional:</p>
 <ul>
   <li><strong>Currency conversion</strong>, only when Online Mode is turned on in Settings, to
@@ -122,8 +123,8 @@ Niji. We do not sell, rent, or share your data, because we never receive it.</p>
 transaction data:</p>
 <ul>
   <li><strong>SQLCipher</strong> — an on-device encryption library. Entirely local.</li>
-  <li><strong>Google Play Billing</strong> — processes the one-time purchase. Google receives
-    purchase information under <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</li>
+  <li><strong>Google Play Billing</strong> — processes the subscription. Google receives
+    purchase and billing information under <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</li>
   <li><strong>Google Play Integrity</strong> — verifies the install is legitimate. Also Google's.</li>
 </ul>
 
