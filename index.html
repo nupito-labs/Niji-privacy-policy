@@ -32,127 +32,114 @@
 <body>
 
 <h1>Niji Privacy Policy</h1>
-<p class="updated">Last updated: 11 September 2026</p>
+<p class="updated">Last updated: 5 October 2026</p>
 
 <h2>The short version</h2>
-<p>Niji reads payment notifications on your phone, turns them into a spending
-record, and keeps that record on your phone. It has no servers. It does not
-have an account system. Your transaction history is never uploaded, sold, or
-shared with anyone, including us.</p>
+
+<p>Niji reads payment notifications on your phone, turns them into a spending record, and keeps that record on your phone. It has no servers. It does not have an account system. Your transaction history is never uploaded, sold, or shared with anyone, including us.</p>
+
 <p>Everything below is detail on that.</p>
 
 <h2>What Niji reads</h2>
-<p><strong>Payment notifications.</strong> With your permission, Niji reads notifications
-posted by the payment and bank apps <strong>you select</strong> during setup or in
-Settings &rarr; Monitored apps. From those notifications it extracts:</p>
+
+<p><strong>Payment notifications.</strong> With your permission, Niji reads notifications posted by the payment and bank apps <strong>you select</strong> during setup or in Settings &rarr; Detection &amp; permissions &rarr; Monitored apps. From those notifications it extracts:</p>
+
 <ul>
   <li>the amount</li>
   <li>who was paid, where the notification says so</li>
   <li>the time</li>
-  <li>the notification's text, kept alongside the entry so you can check what it
-    was read from</li>
+  <li>the notification's text, kept alongside the entry so you can check what it was read from</li>
 </ul>
-<p>Notifications from every other app on your phone are discarded before their
-content is examined.</p>
-<p>Niji does not read your SMS messages, email content, contacts, photos,
-call log, or location, and does not request permission for any of them.</p>
-<p><strong>What you type.</strong> Transactions you add or edit by hand, including any note or
-payee name you enter.</p>
-<p><strong>Text you share into Niji.</strong> Niji can be picked from another app's Share
-menu for plain text — for example, a bank SMS you choose to share manually.
-That text is parsed on your device to prefill the same add-transaction screen
-as manual entry, which you review and confirm before anything is saved. It is
-never read automatically, never sent anywhere, and never stored alongside the
-saved transaction.</p>
+
+<p>Notifications from every other app on your phone are discarded before their content is examined.</p>
+
+<p>Niji does not read your email content, contacts, photos, call log, or location, and does not request permission for any of them.</p>
+
+<p><strong>SMS (optional, off by default).</strong> If you turn it on in Settings &rarr; Automated Tracking, Niji reads messages from banks and financial institutions on a built-in list — see "Permissions, and why each exists" below for exactly what that means. This is optional: notification-based detection (above) works without it, and turning SMS off (or never turning it on) does not disable anything else.</p>
+
+<p><strong>What you type.</strong> Transactions you add or edit by hand, including any note or payee name you enter.</p>
+
+<p><strong>Text you share into Niji.</strong> Niji can be picked from another app's Share menu for plain text — for example, a bank SMS you choose to share manually. That text is parsed on your device to prefill the same add-transaction screen as manual entry, which you review and confirm before anything is saved. It is never read automatically, never sent anywhere, and never stored alongside the saved transaction.</p>
+
 <p>That is the complete list. Niji collects nothing else.</p>
 
 <h2>Where it goes</h2>
-<p>Nowhere. It is written to a database on your device that is encrypted with
-AES-256 (SQLCipher). The encryption key is generated on your device, stored in
-the Android Keystore, and never leaves it.</p>
-<p>Niji has no server. There is no account to sign up for, nothing to sync, and
-no analytics, advertising, tracking, or crash-reporting service in the app.</p>
+
+<p>Nowhere. It is written to a database on your device that is encrypted with AES-256 (SQLCipher). The encryption key is generated on your device, stored in the Android Keystore, and never leaves it.</p>
+
+<p>Niji has no server. There is no account to sign up for, nothing to sync, and no analytics, advertising, tracking, or crash-reporting service in the app.</p>
 
 <h2>The internet permission, stated plainly</h2>
-<p>Niji's app listing shows the <code>INTERNET</code> permission, and we would rather
-explain that than have you find it and wonder.</p>
-<p>Most of it is <strong>Google Play Billing</strong> and the <strong>Play Integrity API</strong>, built
-into the app and requiring it. Those are used for the subscription (30 days
-free, then &#8377;365/year, cancel anytime) and to check the app was installed
-legitimately. They talk to Google, not to us — we have nothing for them to
-talk to.</p>
-<p>Niji code itself also opens one kind of connection, optional:</p>
-<ul>
-  <li><strong>Currency conversion</strong>, only when Online Mode is turned on in Settings, to
-    fetch exchange rates from a public rate provider (api.frankfurter.app). No
-    transaction data is sent — only a currency code and a date.</li>
-</ul>
+
+<p>Niji's app listing shows the <code>INTERNET</code> permission, and we would rather explain that than have you find it and wonder.</p>
+
+<p>Most of it is <strong>Google Play Billing</strong> and the <strong>Play Integrity API</strong>, built into the app and requiring it. Those are used for the subscription (35 days free, then ₹365/year for Pro, cancel anytime; a free tier stays available) and to check the app was installed legitimately. They talk to Google, not to us — we have nothing for them to talk to.</p>
+
+<p>In this release, that is the whole of it — Niji code itself opens no connection of its own. (A currency-conversion feature exists in the code but its Settings toggle and entry point are switched off for this release; were it reachable, it would only ever send a currency code and a date to a public rate provider, never transaction data.)</p>
+
 <p>No part of your spending data is transmitted anywhere, by any means.</p>
 
 <h2>Backups, and the one case where data leaves your phone</h2>
-<p>If you choose to create a backup, Niji writes an encrypted file and asks you
-where to put it, using Android's standard file picker.</p>
+
+<p>If you choose to create a backup, Niji writes an encrypted file and asks you where to put it, using Android's standard file picker.</p>
+
 <ul>
-  <li>The file is encrypted with AES-256-GCM using a <strong>recovery code shown once</strong>
-    and never stored. We cannot open your backup. Neither can anyone who obtains
-    the file without that code — and if you lose it, the backup cannot be
-    recovered by us or anyone else.</li>
-  <li>Where the file goes is entirely your choice. <strong>If you choose Google Drive or
-    any other cloud location, the file is then held by that provider under their
-    terms and privacy policy, not ours.</strong> Niji is not told where you saved it.</li>
+  <li>The file is encrypted with AES-256-GCM using a <strong>recovery code shown once</strong> and never stored. We cannot open your backup. Neither can anyone who obtains the file without that code — and if you lose it, the backup cannot be recovered by us or anyone else.</li>
+  <li>Where the file goes is entirely your choice. <strong>If you choose Google Drive or any other cloud location, the file is then held by that provider under their terms and privacy policy, not ours.</strong> Niji is not told where you saved it.</li>
 </ul>
+
 <p>This only ever happens because you asked for it.</p>
 
 <h2>Permissions, and why each exists</h2>
+
 <table>
-  <tr><th>Permission</th><th>Why</th></tr>
-  <tr><td>Notification access</td><td>The core feature. Reads payment notifications from apps you select.</td></tr>
-  <tr><td>Show notifications</td><td>To alert you before a bill or EMI is due. Reminders are generated on your device.</td></tr>
-  <tr><td>Exact alarms <em>(optional)</em></td><td>Makes those reminders arrive on time rather than up to an hour late.</td></tr>
-  <tr><td>Run at startup</td><td>Re-arms your reminders after the phone restarts.</td></tr>
-  <tr><td>Vibrate</td><td>Reminder alerts.</td></tr>
-  <tr><td>Internet, network state</td><td>Google Play Billing and Play Integrity, plus currency conversion if Online Mode is on — see above.</td></tr>
+<tr><th>Permission</th><th>Why</th></tr>
+<tr><td>Notification access</td><td>The core feature. Reads payment notifications from apps you select.</td></tr>
+<tr><td>Show notifications</td><td>To alert you before a bill or EMI is due. Reminders are generated on your device.</td></tr>
+<tr><td>Exact alarms <em>(optional)</em></td><td>Makes those reminders arrive on time rather than up to an hour late.</td></tr>
+<tr><td>Run at startup</td><td>Re-arms your reminders after the phone restarts.</td></tr>
+<tr><td>Vibrate</td><td>Reminder alerts.</td></tr>
+<tr><td>Internet, network state</td><td>Google Play Billing and Play Integrity — see above.</td></tr>
+<tr><td>SMS <em>(optional, off by default)</em></td><td>Records card, ATM and EMI payments that reach you only by SMS. Niji reads transaction alerts from banks and financial institutions on a built-in list: new messages as they arrive, the last 90 days when you turn SMS on, and any older dates you choose to rescan. If you open "Create SMS rule", Niji also shows recent transaction-looking messages from other business senders, held on screen only; creating a rule saves its pattern, never the message. Messages from people (phone numbers) are never read. The SMS text is never stored and never leaves your phone; only the amount, merchant, payment method, account, the bank's sender ID and the date are kept.</td></tr>
+<tr><td>Biometrics <em>(optional)</em></td><td>App lock with your fingerprint or face, if you turn it on. Handled by Android; Niji never sees the biometric data.</td></tr>
 </table>
-<p>Niji does <strong>not</strong> request SMS, contacts, accounts, storage, location,
-camera, microphone, phone state, or call log access.</p>
+
+<p>Niji does <strong>not</strong> request contacts, accounts, storage, location, camera, microphone, phone state, or call log access. It does request SMS access (<code>READ_SMS</code>/<code>RECEIVE_SMS</code>), off by default, opt-in only, with its own disclosure screen shown before the system permission dialog every time — see "Permissions, and why each exists" above.</p>
 
 <h2>Who your data is shared with</h2>
-<p>No one. There are no third-party analytics, advertising, or attribution SDKs in
-Niji. We do not sell, rent, or share your data, because we never receive it.</p>
-<p>The app includes three third-party components, none of which receives your
-transaction data:</p>
+
+<p>No one. There are no third-party analytics, advertising, or attribution SDKs in Niji. We do not sell, rent, or share your data, because we never receive it.</p>
+
+<p>The app includes these third-party components, none of which receives your transaction data:</p>
+
 <ul>
   <li><strong>SQLCipher</strong> — an on-device encryption library. Entirely local.</li>
-  <li><strong>Google Play Billing</strong> — processes the subscription. Google receives
-    purchase and billing information under <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</li>
+  <li><strong>Google Play Billing</strong> — processes the subscription. Google receives purchase and billing information under <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</li>
   <li><strong>Google Play Integrity</strong> — verifies the install is legitimate. Also Google's.</li>
+  <li><strong>Google Play In-App Review</strong> — shows Google's own "rate this app" sheet, if you choose to rate Niji. Google handles the rating; Niji is not told what you wrote.</li>
 </ul>
 
 <h2>Your control over your data</h2>
+
 <ul>
-  <li><strong>See everything</strong>: your full history is in the app; Settings &rarr; Detection
-    diagnostics also shows what Niji skipped and why.</li>
+  <li><strong>See everything</strong>: your full history is in the app; Settings &rarr; Detection &amp; permissions &rarr; Detection diagnostics also shows what Niji skipped and why.</li>
   <li><strong>Change or delete any entry</strong>: tap a transaction to edit or delete it.</li>
-  <li><strong>Choose what is read</strong>: Settings &rarr; Monitored apps.</li>
+  <li><strong>Choose what is read</strong>: Settings &rarr; Detection &amp; permissions &rarr; Monitored apps.</li>
   <li><strong>Stop it entirely</strong>: revoke notification access in Android Settings.</li>
-  <li><strong>Delete everything</strong>: uninstall Niji, or use Android Settings &rarr; Apps &rarr;
-    Niji &rarr; Storage &rarr; Clear data. Because the data is only on your device,
-    removing the app removes the data. There is no copy for us to delete, and no
-    account for you to close.</li>
+  <li><strong>Delete everything</strong>: uninstall Niji, or use Android Settings &rarr; Apps &rarr; Niji &rarr; Storage &rarr; Clear data. Because the data is only on your device, removing the app removes the data. There is no copy for us to delete, and no account for you to close.</li>
 </ul>
 
 <h2>Children</h2>
-<p>Niji is not directed at children and does not knowingly collect data from
-anyone. It is a personal finance tool intended for adults.</p>
+
+<p>Niji is not directed at children and does not knowingly collect data from anyone. It is a personal finance tool intended for adults.</p>
 
 <h2>Indian users (DPDP Act)</h2>
-<p>Niji processes personal data entirely on your own device and transmits none
-of it. You retain access, correction, and erasure rights over everything in the
-app through the controls listed above.</p>
+
+<p>Niji processes personal data entirely on your own device and transmits none of it. You retain access, correction, and erasure rights over everything in the app through the controls listed above.</p>
 
 <h2>Changes to this policy</h2>
-<p>If this policy changes, the "last updated" date above changes with it. Material
-changes will be noted in the app's release notes.</p>
+
+<p>If this policy changes, the "last updated" date above changes with it. Material changes will be noted in the app's release notes.</p>
 
 <h2>Contact</h2>
 <p><a href="mailto:support@nupitolabs.co.in">support@nupitolabs.co.in</a></p>
